@@ -1,4 +1,4 @@
-var URI = 'http://localhost:8745/ContactApp/api/';
+var URI = 'http://localhost:8547/ContactApp/api/';
 
 
 // -----------------------REGISTERING THE APPLICATION AND DEPENDENCIES-----------------------

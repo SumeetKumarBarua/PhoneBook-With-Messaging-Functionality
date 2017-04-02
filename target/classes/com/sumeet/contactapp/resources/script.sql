@@ -36,10 +36,5 @@ INSERT INTO MESSAGES VALUES(2,3,'777456',TO_DATE('7-JAN-2017 10:35:00','DD-MON-Y
 INSERT INTO MESSAGES VALUES(3,3,'747456',TO_DATE('21-FEB-2017 18:10:00','DD-MON-YY HH24:MI:SS'));
 INSERT INTO MESSAGES VALUES(4,1,'147846',TO_DATE('2-DEC-2015 11:30:00','DD-MON-YY HH24:MI:SS'));
 
-COMMIT
-
+COMMIT;
 select * from messages;
-
-select c.first_name,c.last_name, m.message_desc, m.sent from messages m inner join contacts c on m.contact_id= c.contact_id ORDER BY sent DESC
-
-insert into messages values (5,2,'120000',sysDate);

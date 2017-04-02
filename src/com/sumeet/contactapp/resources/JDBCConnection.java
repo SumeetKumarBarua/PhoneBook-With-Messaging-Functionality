@@ -12,6 +12,7 @@ public class JDBCConnection {
 	        String username = "CONTACT";
 	        String password = "CONTACT";
 	        String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+	       // String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();*/
 	       
 	   try {
 		   Class.forName("oracle.jdbc.driver.OracleDriver");

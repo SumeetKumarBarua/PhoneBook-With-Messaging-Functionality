@@ -83,13 +83,16 @@ public class MessageDAOImpl implements MessageDAO {
 				 mId=rs.getInt("maxid");
 		        }
 			
-			 String sql1="insert into messages values (?,?,?,sysDate)";
+			 //String sql1="insert into messages values (?,?,?,sysDate)";
+			 String sql1="insert into messages (message_id,contact_id,message_desc,sent)  values (?,?,?,?)";
 				PreparedStatement ps1=connection.prepareStatement(sql1);
 			
 				ps1.setInt(1, mId+1);
 				ps1.setInt(2, cId );
 				ps1.setString(3, otp1);
-				
+				Calendar cal=Calendar.getInstance();
+				ps1.setDate(4, new java.sql.Date(cal.getTimeInMillis()));
+								
 				noOfRows=ps1.executeUpdate();
 				if(noOfRows>0){
 					success="OTP sent successfully";
@@ -117,7 +120,7 @@ public class MessageDAOImpl implements MessageDAO {
 		MessageDAOImpl dao=new MessageDAOImpl();
 		try {
 			//System.out.println(dao.getAllMessages().get(0).getConvDate());
-			//System.out.println(dao.addMessages(3, 8893547));
+			System.out.println(dao.addMessages(3, 8893547));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

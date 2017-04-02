@@ -22,7 +22,14 @@ html, body {
     }
    
 }
-
+.intro{
+  margin-top:20%;
+  font-family:Roboto,sans-serif !important;
+  font-weight: 600;
+  font-size: 28px;
+  color: white;
+  display: inline;
+}
 .container-fluid{
 	display: table;
 	width: 100%;
@@ -64,7 +71,7 @@ ul .list{
      font-family: Roboto !important;
 }
 .footer {
-	 
+	 position:fixed;
     color:white;
     text-align:center;
     bottom: 8px;
@@ -79,14 +86,6 @@ ul .list{
 	background-color: #fff;
 }
 
-.contactIcon{
-	height:2em;
-	width:2em;
-	padding-top:10px;
-	border-radius:50%;
-	font-size: 2em; 
-	color: black;
-}
 .contact-align{
 	margin-top: 2%;
 	margin-bottom: 2%;
