@@ -1,0 +1,23 @@
+
+<div class="partial-page">
+	<div class="col-md-2"></div>
+
+	<div class="col-md-8 col-xs-12 contact">
+		<div class="contact-align">
+			<form role="form" name="contactForm">
+				<div ng-repeat="x in contactForm.contactList">
+					<a class="anchor" href="#/Details/{{x.contactId}}">
+						 <div class="anchor"> 
+							<i class="fa fa-user-circle-o contactIcon" aria-hidden="true"></i>
+							<span class="contactText">{{x.firstName}}&nbsp{{x.lastName}}</span>
+						</div>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="col-md-2"></div>
+	
+
+</div>

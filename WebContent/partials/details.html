@@ -1,0 +1,26 @@
+
+<div class="partial-page" ng-init="contactForm.getContactById()">
+	<div class="col-md-2"></div>
+
+	<div class="col-md-8 col-xs-12 contact">
+		<div class="contact-align col-xs-12">
+			<form role="form" name="contactForm">
+				<div ng-repeat="x in contactForm.contactList1">
+				<h2>{{x.firstName}}&nbsp{{x.lastName}}</h2>
+				<br>
+				<h3><i class="fa fa-phone" aria-hidden="true"></i>&nbsp&nbsp+91-{{x.phoneNo}}</h3>
+				<br>
+				<h4><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp&nbsp{{x.location}}</h4>
+
+			<br><br>
+			<a href="#/Send/{{x.contactId}}" class="sendMessage">Send Message</a>
+			<br><br> 
+			</div>		
+			</form>	
+		</div>
+	</div>
+
+	<div class="col-md-2"></div>
+	
+
+</div>

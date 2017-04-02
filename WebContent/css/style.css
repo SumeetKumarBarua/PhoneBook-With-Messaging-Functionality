@@ -1,0 +1,158 @@
+html, body {
+	height: 100%;
+	background-color: #cccccc;
+}
+.top-header {
+    width: 100%;
+    height: 4em;
+    background-color: #2a56c6;
+    position: fixed;
+}
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+    
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+   
+}
+
+.container-fluid{
+	display: table;
+	width: 100%;
+	font-weight: normal;
+	text-align: center;	
+}
+.navbar ul li{
+	display: inline;
+	font-size: 1em;
+	font-weight:normal;
+}
+.navbar ul{
+	text-transform: uppercase;
+	word-spacing: 50px;
+	letter-spacing: 3px;
+}
+ul .list{
+	font-family: Roboto !important;
+	text-align:center;
+	font-weight: 100;
+	font-size: 4em;
+}
+
+@font-face {
+    font-family: simplifica;    
+    src: url("../css/simp.ttf");
+}
+
+.simp {
+     font-family: simplifica !important;
+}
+
+@font-face {
+    font-family: Roboto;    
+    src: url("../css/roboto.ttf");
+}
+
+.roboto {
+     font-family: Roboto !important;
+}
+.footer {
+	 
+    color:white;
+    text-align:center;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    height:50px;
+    margin-bottom:20px;
+    
+}
+.contact{
+	margin-top:2%;
+	background-color: #fff;
+}
+
+.contactIcon{
+	height:2em;
+	width:2em;
+	padding-top:10px;
+	border-radius:50%;
+	font-size: 2em; 
+	color: black;
+}
+.contact-align{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+.contactText{
+	font-size: 1em;
+	text-align: center;
+	color: black;
+}
+.anchor{
+	margin-top:2%;
+	text-align: center;
+	text-decoration:none;
+}
+.anchor:hover {
+	background-color: #a6a6a6;
+	color: white;
+	text-decoration: none;	 
+}
+h1.details{
+	font-family:Roboto Thin, sans-serif;
+}
+.sendMessage {
+	font-size:16px;
+	color:black;
+    border: 2px solid #a1a1a1;
+    padding: 10px 10px; 
+    background:#01cb9f;
+    width: 180px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+.sendMessage:hover{
+	color:white;
+	text-decoration: none;
+}
+.send{
+	font-size:16px;
+	color:black;
+    border: 2px solid #a1a1a1;
+    padding: 10px 10px; 
+    background:#01cb9f;
+    width: 80px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+.send:hover{
+	color:white;
+	text-decoration: none;
+}
+.a{
+	
+}
+.a:hover{
+	text-decoration:none;
+}
+.textarea{
+	border: 0.25px solid black;	
+	box-shadow: 0px 0px 4px 2px #cccccc;
+}
+.success{
+	color: #01cb9f;
+	font-size: 2em;
+}
+.messages{
+	font-size: 1.5em;
+	color: black;
+}

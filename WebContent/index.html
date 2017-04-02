@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONTACT APP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<script src="js/shared/jquery.js"></script>
+<script src="js/shared/bootstrap.js"></script>
+<script src="js/shared/angular.js"></script>
+<script src="js/shared/angular-route.js"></script>
+<script src="js/user/Application.js"></script>
+<script src="js/user/Controller.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+<body ng-app="Application" ng-controller="Controller">
+
+<nav id="mainNav" class="navbar  navbar-fixed-top affix"> 
+	<div class="container-fluid top-header">
+		<div class="navbar-header">
+		<button type=button class="navbar-toggle" data-toggle="collapse" data-target="#navbarcollapse" style="border: 1px solid white">
+			<span style="border: 1px solid white;" class="icon-bar"></span>
+			<span style="border: 1px solid white;" class="icon-bar"></span>
+			<span style="border: 1px solid white;" class="icon-bar"></span>
+		</button>
+		</div>
+		<!-- <div class="navbar-header nav navbar-nav navbar-left">Friends Book</div> -->
+		<div class="collapse navbar-collapse" id="navbarcollapse" >
+		<ul class="nav navbar-nav navbar-left list">
+			<li><a href="#Contacts" style="color: white">Contacts</a></li>
+			<li><a href="#Messages" style="color: white">Messages</a></li>
+		</ul>
+		</div>
+		
+	</div>
+
+</nav> 
+
+
+<br><br><br>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div ng-view></div>
+		</div>
+	</div>
+</body>
+<br><br>
+<div class="footer"> 
+<br>
+<h5 class="simp" style="font-size:22px; font-weight:300; color:black;">© Sumeet Barua 2017</h5>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/shared/awesome.min.js"></script>
+</html>
