@@ -4,11 +4,11 @@
 
 	<div class="col-md-8 col-xs-12 contact">
 	<form role="form" name="contactForm">
-		<div class="scrollable-content-vertical">
+			<div>
 				<table class="table table-responsive" ng-show="contactForm.msgList">
 					<thead>
 						<tr>
-						<td></td>
+							<td></td>
 							<td class="messages">Name</td>
 							<td class="messages">OTP Sent</td>
 							<td class="messages">Date/Time</td>
@@ -16,8 +16,8 @@
 					</thead>
 					<tbody>
 						 <tr ng-repeat="x in contactForm.msgList">
-					<td><i class="fa fa-envelope-open contactIcon" style="font-size:2em; color:black;" aria-hidden="true"></i></td>
-					<td>{{x.firstName}}&nbsp{{x.lastName}}</td>
+							<td><i class="fa fa-envelope-open contactIcon" style="font-size:2em; color:#4d94ff;" aria-hidden="true"></i></td>
+							<td>{{x.firstName}}&nbsp{{x.lastName}}</td>
 							<td>{{x.messageDesc}}</td>
 							<td>{{x.convDate}}</td>
 						</tr> 
@@ -26,7 +26,7 @@
 			</div>
 </form>
 	</div>
-	
+
 	<div class="col-md-2"></div>
 	
 

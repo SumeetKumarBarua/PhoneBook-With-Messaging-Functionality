@@ -12,11 +12,19 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 		$scope.init = function(){	
 			$scope.contactForm.getAllContacts(); 
 			$scope.contactForm.getAllMessages(); 
+			
 		};
-	
+	$scope.randomColor=function(){
+	    var colorList=['a','b','c','d','e','f','g','h']
+	    var random=Math.floor(Math.random()*10);
+		if(random>=8)
+		return colorList[10-random-1];
+		return colorList[random];
+	}
 	$scope.contactForm.getAllContacts = function() {		
 		var responsePromise = $http.get(URI + "ContactAPI" + "/allContacts");
 		responsePromise.then(function(response) {
+			
 			$scope.contactForm.contactList = response.data;
 		}, function(response) {
 			$scope.contactForm.contactList = null;
@@ -33,26 +41,12 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 		});
 
 	};
-
+	
 	$scope.contactForm.getOTP=function(){
 		var x=Math.floor(Math.random()*900000) + 100000;
 		$scope.otp=x;
 		document.getElementById("d").innerHTML = "  Hi. Your OTP is: " + x;	
 	}
-	
-	$scope.Send= function() {
-		var z=$routeParams.value;
-		var y=$scope.otp;
-		console.log(z);
-		console.log(y);
-		var responsePromise = $http.post(URI + "MessageAPI" + "/addMessages/"+z+"/"+y);
-		responsePromise.then(function(response) {
-			$scope.msg = response.data;
-		}, function(response) {
-			$scope.msg = null;
-		});
-	   };
-	
 	
 	$scope.contactForm.getAllMessages = function() {		
 		var responsePromise = $http.get(URI + "MessageAPI" + "/allMessages");
@@ -66,6 +60,62 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 
 	};
 	
+	$scope.setUrl=function(conId){
+		window.location.href="#/Details/"+conId;
+	}
+	
+	$scope.goIndex=function(){
+		window.location.href="#/Contacts";
+	}
+	
+	$scope.Send= function() {
+		var z=$routeParams.value;
+		var y=$scope.otp;
+		var responsePromise = $http.post(URI + "MessageAPI" + "/addMessages/"+z+"/"+y);
+		responsePromise.then(function(response) {
+			$scope.msg = response.data;
+			setTimeout(function() {
+				$scope.stoppingSignal();
+				setTimeout(function() {
+					document.getElementById('msg').style.display = 'block';
+				}, 0)
+			}, 0);
+			
+		}, function(response) {
+			$scope.msg = null;
+		});
+	   };
+	
+	   
+	   $scope.AddContacts= function() {
+			
+			var responsePromise = $http.post(URI + "MessageAPI" + "/addMessages/"+z+"/"+y);
+			responsePromise.then(function(response) {
+				$scope.msg = response.data;
+				setTimeout(function() {
+					$scope.stoppingSignal();
+					setTimeout(function() {
+						document.getElementById('msg').style.display = 'block';
+					}, 0)
+				}, 0);
+				
+			}, function(response) {
+				$scope.msg = null;
+			});
+		   };
+	
+	
+	
+	
 	$scope.init();
 
+	$scope.waitingSignal=function(){
+	    $scope.flagSignal=true;
+	    setTimeout(function() {$scope.Send();},3000);
+	    
+	}
+	$scope.stoppingSignal=function(){
+		$scope.flagSignal=false;
+	}
+	
 });

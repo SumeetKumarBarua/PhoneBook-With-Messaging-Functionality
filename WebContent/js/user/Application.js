@@ -1,4 +1,4 @@
-var URI = 'http://localhost:8547/ContactApp/api/';
+var URI = 'http://localhost:8588/ContactApp/api/';
 
 
 // -----------------------REGISTERING THE APPLICATION AND DEPENDENCIES-----------------------
@@ -27,7 +27,7 @@ contact.config([ '$routeProvider', function($routeProvider) {
 		templateUrl : 'partials/sendMessage.html',
 		controller :'Controller'
 	}).otherwise({
-		redirectTo : '/'
+		redirectTo : '/Contacts'
 	});
 } ]);
 

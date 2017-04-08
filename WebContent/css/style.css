@@ -1,12 +1,13 @@
 html, body {
 	height: 100%;
-	background-color: #cccccc;
+	background-color: #e6e6e6;
 }
 .top-header {
     width: 100%;
     height: 4em;
     background-color: #2a56c6;
     position: fixed;
+    box-shadow: 0px 0px 4px 4px #cccccc;
 }
 @media only screen and (max-width: 700px){
     .responsive {
@@ -22,6 +23,14 @@ html, body {
     }
    
 }
+
+/* @media only screen and (max-width: 350px){
+    .responsive {
+        width: 100%;
+    }
+   
+} */
+
 .intro{
   margin-top:20%;
   font-family:Roboto,sans-serif !important;
@@ -45,6 +54,7 @@ html, body {
 	text-transform: uppercase;
 	word-spacing: 50px;
 	letter-spacing: 3px;
+	font-size:15px;
 }
 ul .list{
 	font-family: Roboto !important;
@@ -52,7 +62,10 @@ ul .list{
 	font-weight: 100;
 	font-size: 4em;
 }
+.nav>li>a:focus, .nav>li>a:hover {
 
+	background-color: #CCCCCC;
+}
 @font-face {
     font-family: simplifica;    
     src: url("../css/simp.ttf");
@@ -70,20 +83,43 @@ ul .list{
 .roboto {
      font-family: Roboto !important;
 }
-.footer {
-	 position:fixed;
-    color:white;
+
+.addLogo {
+	font-size:25px;
     text-align:center;
-    bottom: 8px;
-    left: 0;
-    right: 0;
-    height:50px;
-    margin-bottom:20px;
-    
+	cursor: pointer;
+    height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: #50c878;
+	box-shadow: 0px 0px 4px 4px #cccccc;
+}
+
+.logo{
+	margin-top: 15px;
+	margin-right: -5px;
+}
+.iconUser
+{
+	font-size: 6em;
+	text-align:center;
+	 
 }
 .contact{
 	margin-top:2%;
 	background-color: #fff;
+	box-shadow: 0px 2px 6px 4px #cccccc;
+	font-family:sans-serif;
+	
+    border-radius: 2px;
+
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sideLogo{
+	background-color: #6495ED;
+	/* font-size: 2em; */
+	 
 }
 
 .contact-align{
@@ -91,11 +127,7 @@ ul .list{
 	margin-bottom: 2%;
 	text-align: center;
 }
-.contactText{
-	font-size: 1em;
-	text-align: center;
-	color: black;
-}
+
 .anchor{
 	margin-top:2%;
 	text-align: center;
@@ -118,10 +150,12 @@ h1.details{
     width: 180px;
     border-radius: 25px;
     text-decoration: none;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.31);
 }
 .sendMessage:hover{
 	color:white;
 	text-decoration: none;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.31);
 }
 .send{
 	font-size:16px;
@@ -132,10 +166,12 @@ h1.details{
     width: 80px;
     border-radius: 25px;
     text-decoration: none;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.31);
 }
 .send:hover{
 	color:white;
 	text-decoration: none;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.31);
 }
 .a{
 	
@@ -143,9 +179,11 @@ h1.details{
 .a:hover{
 	text-decoration:none;
 }
+
 .textarea{
 	border: 0.25px solid black;	
 	box-shadow: 0px 0px 4px 2px #cccccc;
+	width: 100%;f
 }
 .success{
 	color: #01cb9f;
@@ -154,4 +192,95 @@ h1.details{
 .messages{
 	font-size: 1.5em;
 	color: black;
+}
+.table1 {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px
+}
+
+.table1>tbody>tr>td, .table1>tbody>tr>th, .table1>tfoot>tr>td, .table1>tfoot>tr>th,
+	.table1>thead>tr>td, .table1>thead>tr>th {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	
+}
+.table1-hover>tbody>tr:hover {
+	background-color: #89CFF0;
+}
+.form-group{
+	margin-bottom: 15px;
+}
+.form-control {
+    height: auto!important;
+padding: 8px 12px !important;
+}
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 18px;
+    padding-top: 3px;
+}
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+.a{
+background-color: #f9a65a;	
+width:50px;
+height:50px;
+border-radius:50%;
+padding:10px;
+}
+.b{
+background-color: #599ad3;	
+width:50px;
+height:50px;
+border-radius:50%;
+padding:10px;
+}
+.c{
+background-color: #79c36a;	
+width:50px;
+height:50px;
+border-radius:50%;
+padding:10px;
+}
+.d{
+background-color: #f1595f;	
+border-radius:50%;
+width:50px;
+height:50px;
+padding:10px;
+}.e{
+background-color: #727272;	
+padding:10px;
+border-radius:50%;
+width:50px;
+height:50px;
+}
+.f{
+background-color: #d77fb3;	
+padding:10px;
+border-radius:50%;
+width:50px;
+height:50px;
+}
+.g{
+background-color: #cd7058;	
+padding:10px;
+border-radius:50%;
+width:50px;
+height:50px;
+}
+.h{
+background-color: #9e66ab;	
+padding:10px;
+border-radius:50%;
+width:50px;
+height:50px;
 }
