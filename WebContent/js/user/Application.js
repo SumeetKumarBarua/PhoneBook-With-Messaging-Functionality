@@ -1,6 +1,7 @@
 var URI = 'http://localhost:8588/ContactApp/api/';
 
 
+
 // -----------------------REGISTERING THE APPLICATION AND DEPENDENCIES-----------------------
 
 var contact = angular.module("Application", ['ngRoute']);
@@ -25,6 +26,9 @@ contact.config([ '$routeProvider', function($routeProvider) {
 		controller :'Controller'
 	}).when('/Send/:value', {
 		templateUrl : 'partials/sendMessage.html',
+		controller :'Controller'
+	}).when('/Facts', {
+		templateUrl : 'partials/facts.html',
 		controller :'Controller'
 	}).otherwise({
 		redirectTo : '/Contacts'

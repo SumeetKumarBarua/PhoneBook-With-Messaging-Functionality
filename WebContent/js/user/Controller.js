@@ -118,4 +118,24 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 		$scope.flagSignal=false;
 	}
 	
+/*});
+contact.controller("FactsController", function($scope,$route,$http) {*/
+	$scope.factList=null;
+	$scope.Randomlist=null;
+	$scope.flag=null;
+	
+	$scope.getFacts=function(){
+		
+		var response=$http.get(URI+"FactAPI/allFacts");
+		response.then(function(res){
+			$scope.factList=res.data;
+			s=$scope.factList.length;
+			 var x = Math.floor((Math.random() *(s-1)) + 0);
+			$scope.Randomlist=$scope.factList[x];
+			$scope.flag=true;
+		},function(res){
+			$scope.factList=null;
+		});
+	};
+	
 });
