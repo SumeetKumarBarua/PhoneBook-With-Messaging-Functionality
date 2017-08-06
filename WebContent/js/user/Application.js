@@ -1,5 +1,4 @@
-var URI = 'http://localhost:8588/ContactApp/api/';
-
+var URI = 'https://phonebook123.herokuapp.com/api/';
 
 
 // -----------------------REGISTERING THE APPLICATION AND DEPENDENCIES-----------------------
@@ -34,4 +33,3 @@ contact.config([ '$routeProvider', function($routeProvider) {
 		redirectTo : '/Contacts'
 	});
 } ]);
-

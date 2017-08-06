@@ -24,7 +24,7 @@
 
 								<td><p ng-class="randC"><span 
 									style="font-size: 20px; color: #fff; padding-top: 8px; cursor: pointer;"
-									aria-hidden="true" >{{x.firstName[0]}}{{x.lastName[0]}}</span></p></td>
+									aria-hidden="true" >{{x.firstName[0]}}</span></p></td> <!--  {{x.lastName[0]}} -->
 								<td><br>{{x.firstName}}&nbsp{{x.lastName}}</td>
 								<td><br>+91-{{x.phoneNo}}</td>
 							</tr>
@@ -43,7 +43,7 @@
 
 
 <div class="col-md-11 col-sm-11 col-xs-11 "></div>
-<div class="col-md-1 col-sm-1 col-xs-1"><br><br><br>
+<div class="col-md-1 col-sm-1 col-xs-1 mydiv"><br><br><br>
 <div class="addLogo" onclick="document.getElementById('addContacts').style.display='block'" >
 <i class="fa fa-user-plus logo" aria-hidden="true"></i></div>
 </div>
@@ -67,14 +67,15 @@
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa"
 									aria-hidden="true"></i></span> <input type="text" class="form-control"
-									name="name" ng-model="fname" placeholder="Enter your First Name" />
+									name="name1" ng-model="firstName" placeholder="Enter your First Name" required="required"/>
 							</div>
 						</div>
+						
 						<div class="col-md-6">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa"
 									aria-hidden="true"></i></span> <input type="text" class="form-control"
-									name="name" ng-model="lname"  placeholder="Enter your Last Name" />
+									name="name2" ng-model="lastName"  placeholder="Enter your Last Name" required="required"/>
 							</div>
 						</div>
 					</div>
@@ -84,7 +85,8 @@
 						<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="pNo" ng-model="phoneNo"  placeholder="How to contact you ?"/>
+									<input id="E" type="text" class="form-control" name="pNo" ng-model=" phoneNo" 
+									pattern="\d{10}" placeholder="How to contact you ?" required="required" oninvalid="setCustomValidity('Please enter a 10 digit Mobile number')" />
 								</div>	
 								</div>
 						</div>
@@ -94,17 +96,28 @@
 						<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="pNo" ng-model="location"  placeholder="Where do you live ?"/>
+									<input type="text" class="form-control" name="location" ng-model="location" 
+									 placeholder="Where do you live ?" required="required" />
 								</div></div>
 						</div>
 					</div>	
-					</form>
-					<br><br>
-			    <button class="sendMessage" ng-click="AddContacts()">Add to Contacts</button>
+					
+					<br><br><br>
+			    <button  class="btn btn-primary btn-lg" type="submit" value="Submit" ng-click="AddContacts()">Add to Contacts</button>
 				<br> <br>
+				</form>
 				</div> 
  </div>
 </div>
 <div class="col-md-2 col-xs-2 "></div> 
-
 </div>
+
+<div id="msg" class="w3-modal" >
+		<div class="w3-modal-content w3-card-8"
+			style="height: 100px; width: 700px;">
+			<span ng-click="refreshPage()" class="w3-button w3-display-topright">&times;</span>
+			<div class="w3-container" style="background-color: #fff">
+				<h3 class="success">{{msg}}</h3>
+			</div>
+		</div>
+	</div>

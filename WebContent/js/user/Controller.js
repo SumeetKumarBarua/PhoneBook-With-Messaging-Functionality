@@ -53,6 +53,7 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 		responsePromise.then(function(response) {
 			$scope.contactForm.msgList = response.data;
 			$scope.list1=$scope.contactForm.msgList;
+		
 			return $scope.list1;
 		}, function(response) {
 			$scope.contactForm.msgList = null;
@@ -60,13 +61,7 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 
 	};
 	
-	$scope.setUrl=function(conId){
-		window.location.href="#/Details/"+conId;
-	}
 	
-	$scope.goIndex=function(){
-		window.location.href="#/Contacts";
-	}
 	
 	$scope.Send= function() {
 		var z=$routeParams.value;
@@ -88,27 +83,38 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 	
 	   
 	   $scope.AddContacts= function() {
+			$scope.addUser={};
+			$scope.addUser.firstName=$scope.firstName;
+			$scope.addUser.lastName=$scope.lastName;
+			$scope.addUser.phoneNo=$scope.phoneNo;
+			$scope.addUser.location=$scope.location;
 			
-			var responsePromise = $http.post(URI + "MessageAPI" + "/addMessages/"+z+"/"+y);
+		   var data=angular.toJson($scope.addUser);
+		   console.log(data);
+			var responsePromise = $http.post(URI + "ContactAPI/addContacts",data);
 			responsePromise.then(function(response) {
-				$scope.msg = response.data;
-				setTimeout(function() {
-					$scope.stoppingSignal();
-					setTimeout(function() {
-						document.getElementById('msg').style.display = 'block';
-					}, 0)
-				}, 0);
-				
+				$scope.msg = response.data;				
+				document.getElementById('msg').style.display = 'block';
+				document.getElementById('addContacts').style.display = 'none';
 			}, function(response) {
 				$scope.msg = null;
 			});
 		   };
 	
 	
+		   $scope.setUrl=function(conId){
+				window.location.href="#/Details/"+conId;
+			}
+			
+			$scope.goIndex=function(){
+				window.location.href="#/Contacts";
+			}
+			
+			$scope.refreshPage=function(){
+				document.getElementById('msg').style.display = 'none';
+				$route.reload();
+			}
 	
-	
-	$scope.init();
-
 	$scope.waitingSignal=function(){
 	    $scope.flagSignal=true;
 	    setTimeout(function() {$scope.Send();},3000);
@@ -118,6 +124,8 @@ contact.controller("Controller", function($scope,$route,$http,$routeParams,$root
 		$scope.flagSignal=false;
 	}
 	
+	
+	$scope.init();
 /*});
 contact.controller("FactsController", function($scope,$route,$http) {*/
 	$scope.factList=null;

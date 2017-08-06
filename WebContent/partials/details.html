@@ -14,9 +14,16 @@
 				<h3><i class="fa fa-phone" aria-hidden="true"></i>&nbsp&nbsp{{x.phoneNo}}</h3>
 				<br>
 				<h4><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp&nbsp{{x.location}}</h4>
+				<br>
+				<td>
+				<a class="edit" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+				</td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<td>
+				<a class="edit" title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+				</td>
 
 			<br><br>
-			<a href="#/Send/{{x.contactId}}" class="sendMessage">Send Message</a>
+			<a href="#/Send/{{x.contactId}}" class="btn btn-success btn-lg">Send Message</a>
 			<br><br> 
 			</div>		
 			</form>	
